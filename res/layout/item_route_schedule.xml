@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.CampusRide.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_default">
+
+        <!-- Route Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/spacing_m">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size_large"
+                android:layout_height="@dimen/icon_size_large"
+                android:src="@drawable/ic_bus"
+                android:tint="@color/ucc_blue"
+                android:contentDescription="Route"
+                android:layout_marginEnd="@dimen/spacing_m" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_route_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Subheading"
+                    tools:text="Main Campus Loop" />
+
+                <TextView
+                    android:id="@+id/tv_route_frequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    tools:text="Every 15 minutes" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            style="@style/Widget.CampusRide.Divider"
+            android:layout_marginBottom="@dimen/spacing_m" />
+
+        <!-- Stops List -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stops"
+            android:textAppearance="@style/TextAppearance.CampusRide.Body"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/spacing_s" />
+
+        <TextView
+            android:id="@+id/tv_route_stops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.CampusRide.Body"
+            android:textColor="@color/text_secondary"
+            android:lineSpacingExtra="4dp"
+            tools:text="Main Gate → Science Block → Library → Casford Hostel → Main Gate" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

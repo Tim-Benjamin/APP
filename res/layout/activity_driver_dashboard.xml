@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.CampusRide.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            app:title="@string/driver_dashboard"
+            app:menu="@menu/driver_menu" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_default">
+
+            <!-- Status Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.CampusRide.Card.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_default">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_default">
+
+                    <!-- Driver Info Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/spacing_l">
+
+                        <ImageView
+                            android:layout_width="@dimen/avatar_size_large"
+                            android:layout_height="@dimen/avatar_size_large"
+                            android:src="@drawable/ic_person"
+                            android:background="@drawable/circle_background_primary"
+                            android:padding="@dimen/padding_medium"
+                            android:contentDescription="Driver"
+                            android:layout_marginEnd="@dimen/spacing_m" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_driver_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.CampusRide.Heading"
+                                tools:text="John Mensah" />
+
+                            <TextView
+                                android:id="@+id/tv_shuttle_assignment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.CampusRide.Body"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginTop="@dimen/spacing_xs"
+                                tools:text="Shuttle A" />
+
+                        </LinearLayout>
+
+                        <!-- Status Badge -->
+                        <TextView
+                            android:id="@+id/tv_driver_status"
+                            style="@style/Widget.CampusRide.Badge.Active"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Active" />
+
+                    </LinearLayout>
+
+                    <!-- Current Route Info -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/padding_medium"
+                        android:background="@color/background_light"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size_medium"
+                            android:layout_height="@dimen/icon_size_medium"
+                            android:src="@drawable/ic_map"
+                            android:tint="@color/ucc_blue"
+                            android:layout_marginEnd="@dimen/spacing_m"
+                            android:contentDescription="Route" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/current_route"
+                                android:textAppearance="@style/TextAppearance.CampusRide.Caption"
+                                android:textColor="@color/text_secondary" />
+
+                            <TextView
+                                android:id="@+id/tv_current_route"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.CampusRide.Subheading"
+                                tools:text="Main Campus Loop" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Stats Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_default">
+
+                <!-- Passengers Card -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.CampusRide.Card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/margin_small">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_default"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size_large"
+                            android:layout_height="@dimen/icon_size_large"
+                            android:src="@drawable/ic_person"
+                            android:tint="@color/ucc_blue"
+                            android:contentDescription="Passengers"
+                            android:layout_marginBottom="@dimen/spacing_s" />
+
+                        <TextView
+                            android:id="@+id/tv_passenger_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.CampusRide.Title"
+                            android:textColor="@color/ucc_blue"
+                            tools:text="24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/passengers_onboard"
+                            android:textAppearance="@style/TextAppearance.CampusRide.Caption"
+                            android:textColor="@color/text_secondary"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Trip Time Card -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.CampusRide.Card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/margin_small">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_default"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size_large"
+                            android:layout_height="@dimen/icon_size_large"
+                            android:src="@drawable/ic_schedule"
+                            android:tint="@color/success"
+                            android:contentDescription="Trip time"
+                            android:layout_marginBottom="@dimen:spacing_s" />
+
+                        <TextView
+                            android:id="@+id/tv_trip_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.CampusRide.Title"
+                            android:textColor="@color/success"
+                            tools:text="2.5h" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trip Duration"
+                            android:textAppearance="@style/TextAppearance.CampusRide.Caption"
+                            android:textColor="@color/text_secondary"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Actions"
+                android:textAppearance="@style/TextAppearance.CampusRide.Subheading"
+                android:layout_marginBottom="@dimen/margin_medium" />
+
+            <!-- Start/End Shift Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_shift_control"
+                style="@style/Widget.CampusRide.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_large"
+                android:text="@string/start_shift"
+                app:icon="@drawable/ic_play"
+                app:iconGravity="textStart"
+                android:layout_marginBottom="@dimen/margin_medium" />
+
+            <!-- Break Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_break"
+                style="@style/Widget.CampusRide.Button.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_large"
+                android:text="@string/take_break"
+                app:icon="@drawable/ic_pause"
+                app:iconGravity="textStart"
+                android:layout_marginBottom="@dimen/margin_medium" />
+
+            <!-- Report Issue Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_report_issue"
+                style="@style/Widget.CampusRide.Button.Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/report_breakdown"
+                android:textColor="@color/danger"
+                app:icon="@drawable/ic_report"
+                app:iconTint="@color/danger"
+                app:iconGravity="textStart" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
