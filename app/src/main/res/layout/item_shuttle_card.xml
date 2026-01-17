@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.CampusRide.Card.Shuttle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_margin"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <!-- Left Status Border -->
+    <View
+        android:id="@+id/view_status_border"
+        android:layout_width="@dimen/shuttle_card_border_width"
+        android:layout_height="match_parent"
+        android:background="@color/success" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/card_padding"
+        android:layout_marginStart="@dimen/shuttle_card_border_width">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_m">
+
+            <!-- Shuttle Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Shuttle Name -->
+                <TextView
+                    android:id="@+id/tv_shuttle_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Subheading"
+                    tools:text="Shuttle A" />
+
+                <!-- Route Name -->
+                <TextView
+                    android:id="@+id/tv_route_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    tools:text="Main Campus Loop" />
+
+            </LinearLayout>
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tv_status_badge"
+                style="@style/Widget.CampusRide.Badge.Active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                tools:text="Active" />
+
+        </LinearLayout>
+
+        <!-- Info Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_m">
+
+            <!-- ETA Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:src="@drawable/ic_schedule"
+                    android:tint="@color/text_secondary"
+                    android:contentDescription="@string/eta" />
+
+                <TextView
+                    android:id="@+id/tv_eta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Subheading"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    tools:text="3 min" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" away"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Caption"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Distance Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:src="@drawable/ic_map"
+                    android:tint="@color/text_secondary"
+                    android:contentDescription="Distance" />
+
+                <TextView
+                    android:id="@+id/tv_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Body"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    tools:text="0.5 km" />
+
+            </LinearLayout>
+
+            <!-- Capacity Info -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:src="@drawable/ic_person"
+                    android:tint="@color/text_secondary"
+                    android:contentDescription="Capacity" />
+
+                <TextView
+                    android:id="@+id/tv_capacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.CampusRide.Body"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    tools:text="12/40" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Notify Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_notify"
+            style="@style/Widget.CampusRide.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notify_when_close"
+            app:icon="@drawable/ic_notifications"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/icon_size_small" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
